@@ -20,7 +20,8 @@ cd CanBoot
  
  
 ```bash
-faire menuconfig
+make clean
+make menuconfig
 ```
 
 #### **SB2040 & ERCF** 
@@ -60,7 +61,7 @@ Exécutez la commande ci-dessus pour vérifier s'il existe une ligne `` ID 2e8a:
  
 ![ lsusb ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/lsusb.png)
  
-2. Brûler
+2. Burn
  
 ```bash
  cd  ~ /CanBoot/
@@ -95,6 +96,7 @@ git pull
 2. Configurez le dernier micrologiciel klipper
  
 ```bash
+make clean
 make menuconfig
 ```
 
