@@ -16,7 +16,7 @@ git clone https://github.com/Arksine/CanBoot
 cd CanBoot
 ```
  
-![ 1 ](../images/adv/canboot/1.png)
+![ 1 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/1.png)
  
  
 ```bash
@@ -27,7 +27,7 @@ faire menuconfig
  
 ?> S'il n'y a pas de RP2040 dans votre option CanBoot, veuillez tirer le dernier CanBoot
  
-![ sb2040 ](../images/adv/canboot/sb2040.png)
+![ sb2040 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/sb2040.png)
  
 Une fois la configuration terminée, appuyez sur la touche "Q", puis appuyez sur la touche "Y" pour quitter et enregistrer. Exécutez la commande suivante pour compiler le firmware
  
@@ -35,7 +35,7 @@ Une fois la configuration terminée, appuyez sur la touche "Q", puis appuyez sur
 make
 ```
  
-![ 3 ](../images/adv/canboot/3.png)
+![ 3 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/3.png)
  
 * Si ``Creating hex file out/canboot.bin`` ou ``Creating uf2 file out/canboot.uf2`` apparaît comme l'image ci-dessus , la compilation est réussie
 
@@ -50,7 +50,7 @@ make
  
 Appuyez et maintenez la touche BOOT de la carte SB2040, puis connectez l'usb à l'ordinateur hôte
  
-![ boot ](../images/boards/fly_sb2040/boot.png)
+![ boot ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/boot.png)
  
 ```bash
 lsusb
@@ -58,7 +58,7 @@ lsusb
  
 Exécutez la commande ci-dessus pour vérifier s'il existe une ligne `` ID 2e8a: 0003 Raspberry Pi RP2 Boot`` , sinon, veuillez vérifier le câble USB (n'oubliez pas d'appuyer et de maintenir la touche BOOT avant de vous connecter)
  
-![ lsusb ](../images/boards/fly_sb2040/lsusb.png)
+![ lsusb ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/lsusb.png)
  
 2. Brûler
  
@@ -71,13 +71,13 @@ L'exécution de la commande ci-dessus peut vous demander d'entrer un mot de pass
  
 Si l'image suivante apparaît, la gravure est réussie
  
-![ flash ](../images/boards/fly_sb2040/flash.png)
+![ flash ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/flash.png)
  
 3. Vérifiez
  
 Si la configuration correcte est compilée et gravée avec succès, le voyant de la carte SB2040 clignotera à une certaine fréquence ! ! !
  
-![ statusled ](../images/boards/fly_sb2040/statusled.png)
+![ statusled ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/statusled.png)
 
 ##  3. Gravez le firmware Klipper avec CanBoot pour la première fois
  
@@ -90,7 +90,7 @@ cd  ~ /klipper
 git pull
 ```
  
-![ 5 ](../images/adv/canboot/5.png)
+![ 5 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/5.png)
  
 2. Configurez le dernier micrologiciel klipper
  
@@ -102,7 +102,7 @@ make menuconfig
  
 1. Commencez par compiler le firmware Klipper et configurez-le comme indiqué ci-dessous
  
-![ sb2040-k ](../images/adv/canboot/sb2040-k.png)
+![ sb2040-k ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/sb2040-k.png)
  
 * Appuyez sur la touche "Q" après avoir configuré comme l'image ci-dessus, puis appuyez sur la touche "Y" pour quitter et enregistrer
  
@@ -112,7 +112,7 @@ make menuconfig
 make
 ```
  
-![ 7 ](../images/adv/canboot/7.png)
+![ 7 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/7.png)
  
 * Si ``Creating hex file out/klipper.bin`` apparaît comme l'image ci-dessus , la compilation est réussie
  
@@ -120,7 +120,7 @@ make
  
 ?> Après la mise sous tension, ce voyant d'état doit clignoter à une certaine fréquence !!! S'il ne clignote pas, veuillez graver à nouveau le micrologiciel de démarrage CanBoot ! !
  
-<img src="../images/boards/fly_sb2040/statusled.png" alt="statusled" style="zoom:67%;" />
+<img src="https://github.com/Eloura74/SB2040_Francais/blob/main/images/statusled.png" alt="statusled" style="zoom:67%;" />
  
 ```
 python3 ~/klipper/lib/canboot/flash_can.py -q
@@ -128,7 +128,7 @@ python3 ~/klipper/lib/canboot/flash_can.py -q
  
 La partie en surbrillance ``365f54003b9d`` dans la figure ci-dessous est l'uuid de ce SHT, et cet uuid est différent pour chaque carte. L'uuid ne changera pas après la gravure du firmware sur la même carte SB2040
  
-![ uuid ](../images/boards/fly_sht_v2/uuid.png)
+![ uuid ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/uuid.png)
  
 ?> Si vous ne trouvez pas le CAN ID, vérifiez :
  
@@ -146,7 +146,7 @@ La partie en surbrillance ``365f54003b9d`` dans la figure ci-dessous est l'uuid 
 python3 lib/canboot/flash_can.py -i can0 -f ./out/klipper.bin -u fea6a45462e9
 ```
  
-![ 10 ](../images/adv/canboot/10.png)
+![ 10 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/10.png)
  
 * Si ``CAN Flash Success`` apparaît dans l'image ci-dessus , cela signifie que la programmation est réussie
  
@@ -156,7 +156,7 @@ python3 lib/canboot/flash_can.py -i can0 -f ./out/klipper.bin -u fea6a45462e9
  
 Appuyez et maintenez la touche BOOT de la carte SB2040, puis connectez l'usb à l'ordinateur hôte
  
-![ boot ](../images/boards/fly_sb2040/boot.png)
+![ boot ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/boot.png)
  
 ```bash
 lsusb
@@ -164,7 +164,7 @@ lsusb
  
 Exécutez la commande ci-dessus pour vérifier s'il existe une ligne `` ID 2e8a: 0003 Raspberry Pi RP2 Boot`` , sinon, veuillez vérifier le câble USB (n'oubliez pas d'appuyer et de maintenir la touche BOOT avant de vous connecter)
  
-![ lsusb ](../images/boards/fly_sb2040/lsusb.png)
+![ lsusb ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/lsusb.png)
  
 2. Brûler
  
@@ -177,13 +177,13 @@ L'exécution de la commande ci-dessus peut vous demander d'entrer un mot de pass
  
 Si l'image suivante apparaît, la gravure est réussie
  
-![ flash ](../images/boards/fly_sb2040/flash.png)
+![ flash ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/flash.png)
  
 3. Vérifiez
  
 Si la configuration correcte est compilée et gravée avec succès, le voyant de la carte SB2040 sera toujours allumé ! ! !
  
-![ statusled ](../images/boards/fly_sb2040/statusled.png)
+![ statusled ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/statusled.png)
  
 
 ##  4. Le firmware avec CanBoot a été gravé
