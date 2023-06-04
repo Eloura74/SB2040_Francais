@@ -64,7 +64,7 @@ Exécutez la commande ci-dessus pour vérifier s'il existe une ligne `` ID 2e8a:
 2. Burn
  
 ```bash
- cd  ~ /CanBoot/
+cd  ~/CanBoot/
 make flash FLASH_DEVICE=2e8a:0003
 ```
  
@@ -87,7 +87,7 @@ Si la configuration correcte est compilée et gravée avec succès, le voyant de
 1. Tirez sur le dernier klipper
  
 ```bash
-cd  ~ /klipper
+cd  ~/klipper
 git pull
 ```
  
@@ -171,7 +171,7 @@ Exécutez la commande ci-dessus pour vérifier s'il existe une ligne `` ID 2e8a:
 2. Brûler
  
 ```bash
- cd  ~ /klipper/
+cd  ~/klipper/
 make flash FLASH_DEVICE=2e8a:0003
 ```
  
@@ -194,7 +194,7 @@ Si la configuration correcte est compilée et gravée avec succès, le voyant de
 * Tirez le dernier klipper
  
 ```bash
-cd  ~ /klipper
+cd  ~/klipper
 git pull
 ```
  
@@ -209,7 +209,7 @@ make
 * ``fea6a45462e9`` dans la commande suivante doit être remplacé par l'UUID que vous avez demandé
  
 ```bash
-python3 ~ /klipper/lib/canboot/flash_can.py -i can0 -q
+python3 ~/klipper/lib/canboot/flash_can.py -i can0 -q
 ```
  
 ```
