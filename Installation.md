@@ -137,8 +137,10 @@ La partie en surbrillance ``365f54003b9d`` dans la figure ci-dessous est l'uuid 
 * Si le câblage est correct, par exemple, si CANH et CANL sont inversés ou pas en bon contact
 * Le capuchon du cavalier 120Ω sur la carte SB2040 est-il inséré ?
 * Votre noyau d'image prend-il en charge CAN
-* Vérifiez si la compilation CanBoot est correcte. S'il n'y a pas d'erreur, vous pouvez réessayer de flasher CanBoot. Pour les étapes de flashage, veuillez vous référer à : [SB2040 Firmware Flashing ] (/advanced/canboot?id=_2-burning canboot boot firmware" cliquez pour sauter changer")
-* Si vous ne trouvez toujours pas l'ID, vous pouvez utiliser l'ordinateur hôte pour graver à nouveau le micrologiciel
+* Vérifiez si la compilation CanBoot est correcte. S'il n'y a pas d'erreur, vous pouvez réessayer de flasher CanBoot. Pour les étapes de flashage, veuillez vous référer à :[Cliquez ici pour accéder à la section CanBoot](#2-graver-le-firmware-de-démarrage-canboot)
+
+
+* Si vous ne trouvez toujours pas l'ID, vous pouvez utiliser l'ordinateur hôte pour graver à nouveau le micrologiciel.
  
 4. Graver le micrologiciel Klipper via CANBUS
  
@@ -150,13 +152,13 @@ python3 lib/canboot/flash_can.py -i can0 -f ./out/klipper.bin -u fea6a45462e9
  
 ![ 10 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/10.png)
  
-* Si ``CAN Flash Success`` apparaît dans l'image ci-dessus , cela signifie que la programmation est réussie
+* Si ``CAN Flash Success`` apparaît dans l'image ci-dessus , cela signifie que la programmation est réussie.
  
 ?> Si le CanBoot a été gravé plusieurs fois et que l'ID CanBoot est introuvable, vous pouvez utiliser la méthode suivante pour graver le micrologiciel :
  
 1. Vérifiez s'il est connecté au mode de gravure BOOT du SB2040
  
-Appuyez et maintenez la touche BOOT de la carte SB2040, puis connectez l'usb à l'ordinateur hôte
+Appuyez et maintenez la touche BOOT de la carte SB2040, puis connectez l'usb à l'ordinateur hôte.
  
 ![ boot ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/boot.png)
  
@@ -164,7 +166,7 @@ Appuyez et maintenez la touche BOOT de la carte SB2040, puis connectez l'usb à 
 lsusb
 ```
  
-Exécutez la commande ci-dessus pour vérifier s'il existe une ligne `` ID 2e8a: 0003 Raspberry Pi RP2 Boot`` , sinon, veuillez vérifier le câble USB (n'oubliez pas d'appuyer et de maintenir la touche BOOT avant de vous connecter)
+Exécutez la commande ci-dessus pour vérifier s'il existe une ligne `` ID 2e8a:0003 Raspberry Pi RP2 Boot `` , sinon, veuillez vérifier le câble USB (n'oubliez pas d'appuyer et de maintenir la touche BOOT avant de vous connecter).
  
 ![ lsusb ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/lsusb.png)
  
@@ -175,9 +177,9 @@ cd  ~/klipper/
 make flash FLASH_DEVICE=2e8a:0003
 ```
  
-L'exécution de la commande ci-dessus peut vous demander d'entrer un mot de passe, entrez simplement le mot de passe de l'utilisateur actuel, et il ne sera pas visible lorsque vous entrez le mot de passe. Après avoir tapé, appuyez sur Entrée
+L'exécution de la commande ci-dessus peut vous demander d'entrer un mot de passe, entrez simplement le mot de passe de l'utilisateur actuel, et il ne sera pas visible lorsque vous entrez le mot de passe. Après avoir entré la commande, appuyez sur Entrée.
  
-Si l'image suivante apparaît, la gravure est réussie
+Si l'image suivante apparaît, la gravure est réussie.
  
 ![ flash ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/flash.png)
  
@@ -191,14 +193,14 @@ Si la configuration correcte est compilée et gravée avec succès, le voyant de
 ##  4. Le firmware avec CanBoot a été gravé
  
 > Si vous avez gravé **Canboot boot firmware** et **Firmware with Canboot**, vous devez mettre à jour le firmware klipper à l'avenir, suivez simplement les étapes ci-dessous
-* Tirez le dernier klipper
+* Obtenir le dernier klipper
  
 ```bash
 cd  ~/klipper
 git pull
 ```
  
-* compiler le dernier klipper
+* Compiler le dernier klipper
  
 ```bash
 make menuconfig
