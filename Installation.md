@@ -1,4 +1,5 @@
-#  CanBoot utilise
+## CanBoot SB2040
+
  
 Qu'est-ce que CanBoot ?
  
@@ -26,7 +27,7 @@ make menuconfig
 
 #### **SB2040 & ERCF** 
  
-?> S'il n'y a pas de RP2040 dans votre option CanBoot, veuillez tirer le dernier CanBoot
+?> S'il n'y a pas de RP2040 dans votre option CanBoot, veuillez Installer le dernier CanBoot
  
 ![ sb2040 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/sb2040.png)
  
@@ -38,7 +39,7 @@ make
  
 ![ 3 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/3.png)
  
-* Si ``Creating hex file out/canboot.bin`` ou ``Creating uf2 file out/canboot.uf2`` apparaît comme l'image ci-dessus , la compilation est réussie
+* Si ``Creating hex file out/canboot.bin`` ou ``Creating uf2 file out/canboot.uf2`` apparaît comme l'image ci-dessus , la compilation est réussie.
 
 
 ##  2. Graver le firmware de démarrage CanBoot
@@ -106,7 +107,7 @@ make menuconfig
  
 ![ sb2040-k ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/sb2040-k.png)
  
-* Appuyez sur la touche "Q" après avoir configuré comme l'image ci-dessus, puis appuyez sur la touche "Y" pour quitter et enregistrer
+* Appuyez sur la touche "Q" après avoir configuré comme l'image ci-dessus, puis appuyez sur la touche "Y" pour quitter et enregistrer.
  
 2. Compiler le micrologiciel klipper
  
@@ -116,9 +117,9 @@ make
  
 ![ 7 ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/7.png)
  
-* Si ``Creating hex file out/klipper.bin`` apparaît comme l'image ci-dessus , la compilation est réussie
+* Si ``Creating hex file out/klipper.bin`` apparaît comme l'image ci-dessus , la compilation est réussie.
  
-3. Après avoir connecté les fils, il est recommandé de couper l'alimentation de toute la machine et de la rallumer. Ensuite, vous pouvez utiliser CanBoot pour flasher le firmware. Entrez d'abord la commande suivante
+3. Après avoir connecté les fils, il est recommandé de couper l'alimentation de toute la machine et de la rallumer. Ensuite, vous pouvez utiliser CanBoot pour flasher le firmware. Entrez d'abord la commande suivante.
  
 ?> Après la mise sous tension, ce voyant d'état doit clignoter à une certaine fréquence !!! S'il ne clignote pas, veuillez graver à nouveau le micrologiciel de démarrage CanBoot ! !
  
@@ -128,15 +129,15 @@ make
 python3 ~/klipper/lib/canboot/flash_can.py -q
 ```
  
-La partie en surbrillance ``365f54003b9d`` dans la figure ci-dessous est l'uuid de ce SHT, et cet uuid est différent pour chaque carte. L'uuid ne changera pas après la gravure du firmware sur la même carte SB2040
+La partie en surbrillance ``365f54003b9d`` dans la figure ci-dessous est l'uuid de ce SHT, et cet uuid est différent pour chaque carte. L'uuid ne changera pas après la gravure du firmware sur la même carte SB2040.
  
 ![ uuid ](https://github.com/Eloura74/SB2040_Francais/blob/main/images/uuid.png)
  
 ?> Si vous ne trouvez pas le CAN ID, vérifiez :
  
-* Si le câblage est correct, par exemple, si CANH et CANL sont inversés ou pas en bon contact
+* Si le câblage est correct, par exemple, si CANH et CANL sont inversés ou pas en bon contact.
 * Le capuchon du cavalier 120Ω sur la carte SB2040 est-il inséré ?
-* Votre noyau d'image prend-il en charge CAN
+* Votre noyau d'image prend-il en charge CAN.
 * Vérifiez si la compilation CanBoot est correcte. S'il n'y a pas d'erreur, vous pouvez réessayer de flasher CanBoot. Pour les étapes de flashage, veuillez vous référer à :[Cliquez ici pour accéder à la section CanBoot](#2-graver-le-firmware-de-démarrage-canboot)
 
 
@@ -144,7 +145,7 @@ La partie en surbrillance ``365f54003b9d`` dans la figure ci-dessous est l'uuid 
  
 4. Graver le micrologiciel Klipper via CANBUS
  
-* ``fea6a45462e9`` dans la commande ci-dessous doit être remplacé par l'UUID que vous avez obtenu à l'étape précédente
+* ``fea6a45462e9`` dans la commande ci-dessous doit être remplacé par l'UUID que vous avez obtenu à l'étape précédente.
  
 ```bash
 python3 lib/canboot/flash_can.py -i can0 -f ./out/klipper.bin -u fea6a45462e9
